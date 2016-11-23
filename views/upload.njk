@@ -1,0 +1,103 @@
+{% extends "template.njk" %}
+
+{% block message %}{{ messages }} {{ error }}{% endblock %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block main %}
+  <form acton="" method="post" name="uploadForm" enctype="multipart/form-data">
+  <input type="file" id="fileElem" name="fileElem" accept="audio/*" style="display:none" onchange="handleFiles(this.files)" required>
+  <input type="file" id="imageElem" name="imageElem" accept="image/*" style="display:none" onchange="handleImage(this.files)">
+
+  <h1>{{ message }}</h1>
+  <fieldset>
+  <legend>New Upload:</legend>
+  <ul>
+  <li>
+  <span>File:</span>
+  <a href="#" id="fileSelect">Select a .mp3 file</a><br>
+  <div id="fileList">
+  <p>No Files selected!</p>
+  </div>
+  </li>
+
+  <li>
+  <span>Title:</span>
+  <input type="text" name="title" id="title" required>
+  </li>
+  <li>
+  <span>Artist:</span>
+  <input type="text" name="artist" id="artist" required>
+  </li>
+  <li>
+  <span>Image:</span>
+  <a href="#" id="imageSelect">Select a img file</a><br>
+  <div id="imageList">
+  <p>No Images selected!</p>
+  </div>
+  </li>
+
+  <li>
+  <span>Set Range:<span id="currentTimePosition"></span></span>
+  <div id="seekSlider"></div>
+
+  </li>
+
+  <li>
+  <audio id="audio" autoplay="false" data-isPlayed="0"></audio>
+  <span>Start:</span>
+  <input type="text" name="start" id="fileStart" value="0:00" onchange="setAudioStart(this.value)">
+  <span>Stop:</span>
+  <input type="text" name="stop" id="fileStop" value="0:00" onchange="setAudioStop(this.value)">
+
+  </li>
+
+  <li>
+  <span>Genere:</span>
+  <input type="text" name="genre" id="genre" required>
+  </li>
+  <li>
+  <span>Tags:</span>
+  <input type="text" name="tags" id="tags" maxlength="60" onchange="updateTags(this.value)">
+  </li>
+
+  <li>
+  <div class="post" id="blue">
+  <div class="postHeader">
+  <div class="postTitle">
+  <div class="postArtist" id="postArtist">AFI</div>
+  <div class="postSong" id="postSong">God Called In sick Today</div>
+  </div>
+  <div class="postSubMenu"><img src="/images/menu.png"></div>
+  </div>
+  <div class="postBody" id="albumImage">
+  <div class="postContent">
+  <span id="playbtn"><img src="/images/play_button.png"></span>
+  <div class="postTags" id="postTags">
+  <span>#love #instagood #photooftheday #tbt #beautiful #cute</span>
+  </div>
+  </div> 
+  </div>
+  <div class="postFooter">
+  <div class="postTitle">
+  </div>
+  <div class="postMenu">
+  <img src="/images/bookmark.png"><img src="/images/spaurk_icon.png"> 
+  </div>
+  </div>
+  </div>
+  </li>
+  <li>
+  <input type="submit" name="submit" value="Upload" id="submit">
+  </li>
+  </ul>
+  </fieldset>
+  </form>
+
+  <script src="/js/musicmetadata.js"></script>
+  <script src="/js/nouislider.min.js"></script>
+  <script src="/js/audio.js"></script>
+  <script>
+
+  </script>
+{% endblock %}

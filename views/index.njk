@@ -1,0 +1,12 @@
+{% extends "template.njk" %}
+
+
+{% block main %}
+    {% for user in users %}
+    <p>{{ user.username }} : {{ user.password }}
+    {% if isLogged %} 
+    <a href="/admin/id/{{ user.id }}">[Delete]</a></p>
+    {% endif %}
+    {% endfor %}
+{% endblock %}
+

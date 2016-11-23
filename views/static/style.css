@@ -1,0 +1,292 @@
+body{
+    background-color: black;
+}
+
+ul{
+    list-style-type: none;
+}
+
+body p{
+    text-align: center;
+    color: white;
+}
+
+.container{
+    margin: 0 auto;
+    width: 1024px;
+    background-color: black;
+}
+
+header{
+    height: 114px;
+    color: white;
+}
+
+header ul{
+    margin-top: 20px;
+}
+
+header a{
+    padding: 0;
+    margin: 0;
+}
+
+main{
+    width: 1024px;
+    color: white;
+    position: relative;
+}
+
+main form{
+    width: 250px;
+    margin: 0 auto;
+    color: white;
+}
+
+main fieldset{
+    padding-right: 50px;
+}
+
+fieldset #submit{
+    float: right;
+    margin-top: 20px;
+}
+
+fieldset #seekSlider{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+main span{
+    display: block;
+    color: white;
+}
+
+.message{
+    background-color: green;
+    text-align: center;
+    margin: 0 auto;
+}
+
+footer{
+    width: 1024px;
+    height: 50px;
+    margin-top: 25px;
+    border-top: 2px solid white;
+}
+
+.bannerLogo{
+    width: 367px;
+    height: 114px;
+    float:left;
+}
+
+.bannerLogo img{
+    width: 367px;
+    height: 104px;
+}
+
+.bannerUser{
+    float: right;
+    text-align: right;
+}
+
+.bannerUser span{
+    margin-right: 75px;
+}
+
+.bannerUser form{
+}
+.bannerUser input{
+    width: 150px;
+}
+
+.bannerUser input[type="submit"]{
+    float: right;
+    width: 80px;
+    margin-top: 2px;
+}
+
+.bannerUser #register{
+    float: right;
+    margin-top: 5px;
+    margin-right: 20px;
+}
+
+.clear{
+    clear: both;
+}
+
+.post{
+    width: 155px;
+    height: 191px;
+    margin-top: 25px;
+    margin-left: 31px;
+    border-radius: 1px 30px;
+    display: inline-block;
+}
+
+
+.postHeader{
+    height: 30px;
+    border-bottom: 2px solid black;
+    font-size: 0.8em;
+}
+
+.postBody{
+    height: 131px; 
+    position: relative;
+    text-align: center;
+    font-size: .8em;
+}
+
+#albumimage{
+}
+
+.postContent {
+}
+
+
+.postContent img{
+    position: absolute;
+    height: 30px;
+    width: 35px;
+    top: 45px;
+    left: 60px;
+
+}
+
+.postContent .postTags{
+    width: 145px;
+    margin-left: 5px;
+    position: absolute;
+    bottom: 0;
+    word-wrap: break-word;
+}
+
+
+.postFooter{
+    height: 30px;
+    border-top: 2px solid black;
+}
+
+.postHeader .postTitle{
+    height: 30px;
+    width: 113px;
+    float: left;
+    border-right: 2px solid black;
+    font-size: 0.7em;
+    position: relative;
+}
+
+.postArtist{
+    overflow: hidden;
+    text-align: center;
+}
+
+.postTitle .postSong{
+    overflow: hidden;
+    position: absolute;
+    bottom: 1px;
+    text-align: center;
+    width: 100%;
+
+}
+
+.postTitle span{
+    display: block;
+    margin-top: 1px;
+}
+
+.postHeader .postSubMenu{
+    height: 30px;
+    width: 40px;
+    float: right;
+}
+
+.postSubMenu img{
+    margin-left: 7px;
+    margin-top: 8px;
+}
+
+
+.postFooter .postMenu{
+    margin: 0 auto;
+    height: 26px;
+    width: 50%;
+}
+
+.postMenu img{
+    margin-top: 3px;
+    margin-left: 15px;
+}
+
+
+#blue{
+    background-color: #4b90bc;
+}
+
+#green{
+    background-color: #16ab5f;
+}
+
+#orange{
+    background-color: #e87f24;
+}
+
+#yellow{
+    background-color: #e1b025;
+}
+
+#red{
+    background-color: #e9543b;
+}
+
+#purple{
+    background-color: #8c50a0;
+}
+
+.profileImage{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.profileName{
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.profileSocial{
+    width: 300px;
+    height: 40px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    display: inline-block;
+}
+
+#social{
+    width: 40px;
+    height: 40px;
+    background-color: grey;
+    display: inline-block;
+    float: right;
+    margin-left: 5px;
+}
+
+.aboutField{
+    width: 500px;
+    height: 150px;
+    background-color: white;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.flashBanner{
+    width: 480px;
+    height: 50px;
+    margin: 0 auto;
+    background-color: white;
+}

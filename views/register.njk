@@ -1,0 +1,35 @@
+{% extends "template.njk" %}
+
+{% block message %}{{ messages }} {{ error }}{% endblock %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block main %}
+    <form acton="/register" method="post">
+    <h1>{{ message }}</h1>
+    <fieldset>
+    <legend>Register Account:</legend>
+        <ul>
+            <li>
+                <span>Username:</span>
+                <input type="text" name="username">
+            </li>
+            <li>
+                <span>Password:</span>
+                <input type="password" name="password">
+            </li>
+            <li>
+                <span>Confirm Password:</span>
+                <input type="password" name="confirmPass">
+            </li>
+            <li>
+                <span>E-Mail: (optional)</span>
+                <input type="email" name="email">
+            </li>
+            <li>
+                <input type="submit" name="submit" value="Register">
+            </li>
+        </ul>
+    </fieldset>
+    </form>
+{% endblock %}

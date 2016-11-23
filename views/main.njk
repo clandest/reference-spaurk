@@ -1,0 +1,114 @@
+{% extends "template.njk" %}
+
+{% block message %}{{ messages }}{% endblock %}
+
+{% block main %}
+    {% for post in posts %}
+    
+<div class="post" id="purple">
+    <audio  src="/uploads/{{ post.audioFile }}" id="audio{{ post._id }}" data-isPlayed="0" data-start="{{ post.start }}" data-stop="{{ post.stop }}"></audio>
+        <div class="postHeader">
+          <div class="postTitle">
+            <div class="postArtist"><a href="/id/{{ post._id }}">{{ post.artist }}</a></div>
+            <div class="postSong">{{ post.title }}</div>
+          </div>
+          <div class="postSubMenu"><img src="/images/menu.png"></div>
+        </div>
+        <div class="postBody" id="albumimage" {% if post.imageFile %}style="background-image: url(/uploads/{{ post.imageFile }}); background-size: 155px 131px" {% endif %}>
+          <div class="postContent">
+            <span class="playBtn" id="{{ post._id }}"><img src="/images/play_button.png"></span>
+            <div class="postTags">
+            {% for user in post._user %}
+            <span>{{ user.username }}</span>
+            {% endfor %}
+            </div>
+          </div> 
+        </div>
+        <div class="postFooter">
+          <div class="postTitle">
+          </div>
+          <div class="postMenu">
+            <img src="/images/bookmark.png"><img src="/images/spaurk_icon.png"> 
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
+<script>
+
+window.URL = window.URL || window.webkitURL;
+
+    var playBtns = document.getElementsByClassName("playBtn");
+		playBtns = [].slice.call(playBtns);
+
+		playBtns.forEach(function (playBtn, i){
+			var  audio = document.getElementById("audio" + playBtn.id);	
+			var sounds = document.getElementsByTagName("audio");
+			var start  = convertToSeconds(sounds[i].dataset.start);
+			var stop  = convertToSeconds(sounds[i].dataset.stop);
+
+			audio.ontimeupdate = function(){ stopAudio(audio, start, stop) };
+
+			playBtns[i].onclick = function(){
+				playAudio(this.id);
+			}
+		});
+
+
+        function stopAudio(audio, startTime, stopTime){
+                var newTime = convertToSeconds(stopTime);
+                console.log(audio.currentTime);
+                if(audio.currentTime >= stopTime){
+                    audio.pause();
+                    audio.currentTime = startTime;
+                }
+        }
+
+
+    function convertToSeconds(string){
+           var result = string.toString().split(":");
+           var min = parseInt(result[0], 10);
+           var sec = parseInt(result[1], 10);
+
+           var newMin = min * 60;
+           var newSec = newMin + sec
+           var newTime = newSec;
+
+           return newTime;
+
+        }
+
+
+    function playAudio(id){
+        var audio = document.getElementById("audio" + id);
+        var playbtn = document.getElementById(id);
+        var sounds = document.getElementsByTagName("audio");
+        var playBtns = document.getElementsByClassName("playBtn");
+        
+        if(audio.paused){
+            for(i = 0; i < sounds.length; i++){ 
+                if("audio" + id != sounds[i].id){
+                    var start = convertToSeconds(sounds[i].dataset.start);
+                    sounds[i].currentTime = start;
+                    sounds[i].pause(); 
+                }
+            }
+
+            for(i = 0; i < playBtns.length; i++){
+                playBtns[i].innerHTML = "<img src=\"/images/play_button.png\">";
+            }
+
+            audio.play();
+            playbtn.innerHTML = "<img src=\"/images/pause_button.png\">";
+
+        } else {
+
+            audio.pause();
+            playbtn.innerHTML = "<img src=\"/images/play_button.png\">";
+
+        }
+    }
+
+</script>
+{% endblock %}
+

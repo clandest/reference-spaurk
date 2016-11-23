@@ -1,0 +1,228 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>{% block title %} {{ title }} {% endblock %}</title>
+      <link rel="stylesheet" href="/style.css">
+      <link rel="stylesheet" href="/normalize.css">
+      <link rel="stylesheet" href="/nouislider.min.css">
+      <script src="https://apis.google.com/js/client.js?onload=onClientLoad" type="text/javascript">
+      </script>
+
+  </head>
+  
+  <body>
+    <div class="container">
+    <div class="message"> 
+    {% block message %} {{ message }} {% endblock %}
+    </div>
+    <header>
+      <div class="bannerLogo"><a href="/"><img src="/images/spaurk_logo.png"></a></div>
+      <div class="bannerUser">
+
+        {% if isLogged %} 
+          <ul>
+          <li>
+            <a href="/watchlist">[Watchlist]</a>
+            <a href="/following">[Following]</a>
+          </li>
+          <li>
+            <a href="/{{ user }}">{{ user }}</a>
+            <a href="/subs">[ X ]</a>
+          </li>
+          <li>
+            <a href="/logout">logout</a>
+          </li>
+          <li>
+            <a href="/upload">New Upload</a>
+          </li>
+          </ul>
+        {% else %}
+          <span>Username:</span>
+          <span>Password:</span>
+          <form action="/login" method="post">
+            <input type="text" name="username" >
+            <input type="password" name="password" >
+            <div id="clear"></div>
+            <input type="submit" name="login" value="login" >
+            <a href="/register" id="register">register</a>
+          </form>
+        {% endif %} 
+        
+      </div>
+    </header>
+    <main>
+    {% block main %}
+      <div class="post" id="purple">
+        <div class="postHeader">
+          <div class="postTitle">
+            <span>#2345678#012345678901</span>
+            <span>#2345678#012345678</span>
+            <span>#2345678#012345678</span>
+          </div>
+          <div class="postSubMenu"><img src="/images/menu.png"></div>
+        </div>
+        <div class="postBody">
+          <div class="postContent">
+            <img src="/images/play_button.png">
+          </div> 
+        </div>
+        <div class="postFooter">
+          <div class="postTitle">
+          </div>
+          <div class="postMenu">
+            <img src="/images/bookmark.png"><img src="/images/spaurk_icon.png"> 
+          </div>
+        </div>
+      </div>
+      <div class="post" id="blue">
+        <div class="postHeader">
+          <div class="postTitle"></div>
+          <div class="postSubMenu"><img src="/images/menu.png"></div>
+        </div>
+        <div class="postBody">
+          <div class="postContent">
+            <img src="/images/pause_button.png">
+          </div> 
+        </div>
+        <div class="postFooter">
+          <div class="postTitle">
+          </div>
+          <div class="postMenu">
+            <img src="/images/bookmark.png"><img src="/images/spaurk_icon.png"> 
+          </div>
+        </div>
+      </div>
+      <div class="post" id="yellow">
+        <div class="postHeader">
+          <div class="postTitle"></div>
+          <div class="postSubMenu"><img src="/images/menu.png"></div>
+        </div>
+        <div class="postBody">
+          <div class="postContent">
+            <img src="/images/play_button.png">
+          </div> 
+        </div>
+        <div class="postFooter">
+          <div class="postTitle">
+          </div>
+          <div class="postMenu">
+            <img src="/images/bookmark.png"><img src="/images/spaurk_icon.png"> 
+          </div>
+        </div>
+      </div>
+      <div class="post" id="red">
+        <div class="postHeader">
+          <div class="postTitle"></div>
+          <div class="postSubMenu"><img src="/images/menu.png"></div>
+        </div>
+        <div class="postBody">
+          <div class="postContent">
+            <img src="/images/play_button.png">
+          </div> 
+        </div>
+        <div class="postFooter">
+          <div class="postTitle">
+          </div>
+          <div class="postMenu">
+            <img src="/images/bookmark.png"><img src="/images/spaurk_icon.png"> 
+          </div>
+        </div>
+      </div>
+      <div class="post" id="blue">
+        <div class="postHeader">
+          <div class="postTitle"></div>
+          <div class="postSubMenu"><img src="/images/menu.png"></div>
+        </div>
+        <div class="postBody">
+          <div class="postContent">
+            <img src="/images/play_button.png">
+          </div> 
+        </div>
+        <div class="postFooter">
+          <div class="postTitle">
+          </div>
+          <div class="postMenu">
+            <img src="/images/bookmark.png"><img src="/images/spaurk_icon.png"> 
+          </div>
+        </div>
+      </div>
+
+
+      <div class="post" id="green">
+        <div class="postHeader">
+          <div class="postTitle"></div>
+          <div class="postMenu"></div>
+        </div>
+        <div class="postBody"></div>
+        <div class="postFooter">
+          <div class="postTitle"></div>
+          <div class="postMenu"></div>
+        </div>
+      </div>
+
+
+      <div class="post" id="blue">
+        <div class="postHeader">
+          <div class="postTitle"></div>
+          <div class="postMenu"></div>
+        </div>
+        <div class="postBody"></div>
+        <div class="postFooter">
+          <div class="postTitle"><div class="content"></div></div>
+          <div class="postMenu"></div>
+        </div>
+      </div>
+      <div class="post" id="blue">
+        <div class="postHeader">
+          <div class="postTitle"></div>
+          <div class="postMenu"></div>
+        </div>
+        <div class="postBody"></div>
+        <div class="postFooter">
+          <div class="postTitle"></div>
+          <div class="postMenu"></div>
+        </div>
+      </div>
+      <div class="post" id="yellow">
+        <div class="postHeader">
+          <div class="postTitle"></div>
+          <div class="postMenu"></div>
+        </div>
+        <div class="postBody"></div>
+        <div class="postFooter">
+          <div class="postTitle"></div>
+          <div class="postMenu"></div>
+        </div>
+      </div>
+      <div class="post" id="red">
+        <div class="postHeader">
+          <div class="postTitle"></div>
+          <div class="postMenu"></div>
+        </div>
+        <div class="postBody"></div>
+        <div class="postFooter">
+          <div class="postTitle"></div>
+          <div class="postMenu"></div>
+        </div>
+      </div>
+      <div class="post" id="blue">
+        <div class="postHeader">
+          <div class="postTitle"></div>
+          <div class="postMenu"></div>
+        </div>
+        <div class="postBody"></div>
+        <div class="postFooter">
+          <div class="postTitle"></div>
+          <div class="postMenu"></div>
+        </div>
+      </div>
+
+
+    {% endblock %}
+    </main>
+    <footer></footer>
+    </div>
+    <p>Copyright 2016 spaurk.net all rights reserved</p>
+  </body>
+</html>
